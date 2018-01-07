@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107155916) do
+ActiveRecord::Schema.define(version: 20180107162459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "histories", force: :cascade do |t|
+    t.jsonb "object_changes"
+    t.string "historyable_type"
+    t.bigint "historyable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["historyable_type", "historyable_id"], name: "index_histories_on_historyable_type_and_historyable_id"
+    t.index ["object_changes"], name: "index_histories_on_object_changes", using: :gin
+  end
 
   create_table "invoices", force: :cascade do |t|
     t.bigint "order_id"
