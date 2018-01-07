@@ -1,0 +1,12 @@
+.container {
+  & {
+    width: 90%;
+    margin: 50px auto;
+  }
+
+  & > .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

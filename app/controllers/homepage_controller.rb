@@ -1,6 +1,10 @@
 class HomepageController < ApplicationController
   require 'csv'
 
+  def index
+    @histories = History.order(created_at: :desc)
+  end
+
   def import
     CSV.foreach(params[:file].path, headers: true) do |row|
       object    = row.to_hash

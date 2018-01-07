@@ -1,0 +1,18 @@
+.table {
+  & {
+    background-color: $white;
+    width: 100%;
+    border-collapse: collapse;
+    @include box-shadow(#000000);
+  }
+
+  & th,
+  & td {
+    text-align: left;
+    padding: 15px;
+  }
+
+  & tr {
+    border-bottom: 1px solid $grey;
+  }
+}

@@ -9,4 +9,8 @@ class History < ApplicationRecord
       updated_at: timestamp
     )
   end
+
+  def timestamp
+    created_at.strftime('%b %d, %Y %I:%M:%S %p')
+  end
 end
