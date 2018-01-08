@@ -1,0 +1,20 @@
+.empty {
+  & {
+    background-color: $white;
+    width: 100%;
+    @include box-shadow(#000000);
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  & > .icon {
+    font-size: 50px;
+  }
+
+  & > div {
+    opacity: 0.3;
+  }
+}
