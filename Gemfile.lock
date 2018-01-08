@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/seuros/capistrano-sidekiq.git
+  revision: c850e17288b612fa0d4defd732b886cf1ab2a7b2
+  specs:
+    capistrano-sidekiq (0.20.0)
+      capistrano (>= 3.9.0)
+      sidekiq (>= 3.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -208,6 +216,7 @@ DEPENDENCIES
   capistrano-npm
   capistrano-rails
   capistrano-rvm
+  capistrano-sidekiq!
   capistrano3-puma
   hamlit
   jquery-rails

@@ -30,6 +30,7 @@ group :development do
   gem 'capistrano-npm'
   gem 'capistrano-rails', require: false
   gem 'capistrano-rvm'
+  gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
   gem 'capistrano3-puma'
 end
 
