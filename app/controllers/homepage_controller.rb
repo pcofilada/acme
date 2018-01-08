@@ -16,6 +16,8 @@ class HomepageController < ApplicationController
         Time.strptime(object['timestamp'], '%s')
       )
     end
+
+    redirect_to root_path
   end
 
   private
