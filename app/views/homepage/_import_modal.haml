@@ -1,0 +1,8 @@
+#import-modal.modal
+  .modal-dialog
+    .modal-content
+      .modal-body
+        = form_with url: import_path, multipart: true do |f|
+          .form-group
+            = f.file_field :file
+          = f.submit 'Import', class: 'btn btn-primary btn-block', 'data-disable-with' => 'Importing...'

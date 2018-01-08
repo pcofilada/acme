@@ -1,0 +1,29 @@
+.modal {
+  & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1072;
+    display: none;
+  }
+
+  & > .modal-dialog {
+    background: $white;
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+}
+
+.modal-backdrop {
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: $black;
+}

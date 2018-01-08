@@ -1,12 +1,9 @@
--#= form_with url: import_path, multipart: true do |f|
-  -#= f.file_field :file
-  -#= f.submit 'Import'
 .container
   .heading
     .left
       %h2 History
     .right
-      %button.btn.btn-primary Import
+      %button.btn.btn-primary{ data: { toggle: 'modal', target: '#import-modal' } } Import
   .content
     %table.table
       %thead
@@ -22,3 +19,4 @@
             %td= history.historyable.class.name
             %td= history.timestamp
             %td= history.object_changes
+= render 'import_modal'

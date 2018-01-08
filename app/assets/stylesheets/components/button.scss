@@ -15,4 +15,8 @@
     color: $white;
     @include box-shadow($blue);
   }
+
+  &.btn-block {
+    width: 100%;
+  }
 }
