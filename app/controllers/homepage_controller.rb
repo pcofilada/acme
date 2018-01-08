@@ -1,9 +1,10 @@
 class HomepageController < ApplicationController
   require 'csv'
 
+  before_action :set_object_types, except: :import
+
   def index
-    @histories    = History.order(created_at: :desc)
-    @object_types = History.pluck(:historyable_type).uniq
+    @histories = History.order(created_at: :desc).page(params[:page])
   end
 
   def import
@@ -25,13 +26,19 @@ class HomepageController < ApplicationController
     filter_params = ActionController::Parameters.new(params_json(params))
 
     @histories = History.filter(filter_params)
+    @histories = @histories.page(params[:page])
 
     respond_to do |format|
+      format.html { render :index }
       format.js
     end
   end
 
   private
+
+  def set_object_types
+    @object_types = History.pluck(:historyable_type).uniq
+  end
 
   def get_item(object)
     item     = object['object_type']

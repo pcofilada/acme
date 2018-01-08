@@ -13,6 +13,7 @@
           %td= history.historyable.class.name
           %td= history.timestamp
           %td= history.object_changes
+  = paginate histories
 - else
   .empty
     .icon.ion-ios-pulse
