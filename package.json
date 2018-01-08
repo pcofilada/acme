@@ -1,5 +1,7 @@
 {
   "name": "acme",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "onmount": "^1.3.0"
+  }
 }

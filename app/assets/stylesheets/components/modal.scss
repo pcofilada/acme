@@ -7,12 +7,18 @@
     bottom: 0;
     z-index: 1072;
     display: none;
+    width: 400px;
+    margin: 0 auto;
+    height: 0px;
+  }
+
+  &.show {
+    display: block;
   }
 
   & > .modal-dialog {
     background: $white;
-    width: 400px;
-    margin: 50px auto;
+    margin: 50px 0;
     padding: 20px;
   }
 }
