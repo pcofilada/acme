@@ -1,3 +1,15 @@
 .form-group {
   margin-bottom: 15px;
 }
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  background: $white;
+}
+
+select {
+  height: 33px;
+  border-radius: 0px;
+  -webkit-appearance: none;
+}

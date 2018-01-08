@@ -3,25 +3,14 @@
     .left
       %h2 History
     .right
+      .filter
+        = form_tag '/filter', method: :get, class: 'filter-form', remote: true do
+          = select_tag :object_type, options_for_select(@object_types), prompt: 'Select Object Type', class: 'form-control'
+          = text_field_tag :id, '', placeholder: 'Object ID', class: 'form-control'
+          = text_field_tag :timestamp, '', placeholder: 'Timestamp', class: 'form-control'
+          = submit_tag 'Submit', class: 'btn btn-primary'
+      %button.btn.btn-primary.btn-filter Filter
       %button.btn.btn-primary{ data: { toggle: 'modal', target: '#import-modal' } } Import
   .content
-    - if @histories.any?
-      %table.table
-        %thead
-          %tr
-            %th Object ID
-            %th Object Type
-            %th Timestamp
-            %th Changes
-        %tbody
-          - @histories.each do |history|
-            %tr
-              %td= history.historyable.id
-              %td= history.historyable.class.name
-              %td= history.timestamp
-              %td= history.object_changes
-    - else
-      .empty
-        .icon.ion-ios-pulse
-        .text History will show up here, so you can easily view them later.
+    = render 'content', histories: @histories
 = render 'import_modal'

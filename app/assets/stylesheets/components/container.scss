@@ -9,4 +9,12 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  & > .heading > .right {
+    display: flex;
+  }
+
+  & > .heading > .right > * {
+    margin-left: 5px;
+  }
 }

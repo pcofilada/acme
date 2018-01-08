@@ -1,0 +1,19 @@
+- if histories.any?
+  %table.table
+    %thead
+      %tr
+        %th Object ID
+        %th Object Type
+        %th Timestamp
+        %th Changes
+    %tbody
+      - histories.each do |history|
+        %tr
+          %td= history.historyable.id
+          %td= history.historyable.class.name
+          %td= history.timestamp
+          %td= history.object_changes
+- else
+  .empty
+    .icon.ion-ios-pulse
+    .text History will show up here, so you can easily view them later.
